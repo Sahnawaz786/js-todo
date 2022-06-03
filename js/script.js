@@ -106,25 +106,36 @@ const checked_icon = function (check) {
       e.preventDefault();
       let target = e.target.closest(".content-data");
       let task_status = target.firstElementChild.firstElementChild;
-
+      console.log("first===>", task_complete_before);
       if (!target.classList.contains("task-completed")) {
         target.classList.add("task-completed");
         target.classList.remove("task-notCompleted");
         target.classList.remove("complete-before");
         task_status.textContent = "completed";
         check_icons.push(index);
+        let new_index = task_complete_before.findIndex((elem) => index);
+        task_complete_before.splice(new_index, 1);
+        // task_complete_before = [];
       } else {
         target.classList.remove("task-completed");
-        if (target.classList.contains("tomo")) {
+        task_complete_before.push(index);
+        if (
+          target.classList.contains("tomo") ||
+          task_complete_before.length > 0
+        ) {
+          target.classList.remove("task-completed");
           target.classList.add("complete-before");
+          target.classList.add("tomo");
           task_status.textContent = "Complete Before ";
           check_icons.splice(index, 1);
         } else {
+          target.classList.remove("task-completed");
           target.classList.add("task-notCompleted");
           task_status.textContent = "pending ";
           check_icons.splice(index, 1);
         }
       }
+      console.log("last===>", task_complete_before);
     });
   });
 };
@@ -140,9 +151,11 @@ const delete_icon = function (trash) {
       let indexs = taskData.findIndex((elem) => elem == k);
 
       console.log(index);
-      console.log(check_icons);
+      // console.log(check_icons);
 
       taskData.splice(indexs, 1);
+      taskmessage.splice(indexs, 1);
+      taskdate.splice(indexs, 1);
       if (
         check_icons.includes(index) &&
         target.classList.contains("task-completed")
@@ -157,11 +170,13 @@ const delete_icon = function (trash) {
         }
         console.log(check_icons);
       } else {
-        let newarr = check_icons.sort((a, b) => a - b); // [1,2,5,6]
+        if (check_icons.length > 0) {
+          let newarr = check_icons.sort((a, b) => a - b); // [1,2,5,6]
 
-        check_icons = newarr.map((elem) => {
-          return elem < index ? elem : elem - 1;
-        });
+          check_icons = newarr?.map((elem) => {
+            return elem < index ? elem : elem - 1;
+          });
+        }
       }
       UpadteUI(taskData, taskdate);
     });
@@ -270,6 +285,7 @@ const task_color_violet = function () {
   console.log(content_data);
   task_complete_before.forEach((elem) => {
     if (content_data[elem] != undefined) {
+      content_data[elem]?.classList.remove("task-completed");
       content_data[elem]?.classList.add("complete-before");
       content_data[elem]?.classList.add("tomo");
       content_data[elem]?.classList.remove("task-notCompleted");
