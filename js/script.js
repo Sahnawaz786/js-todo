@@ -40,7 +40,7 @@ let taskData = [
   "Test 9",
 ];
 
-let check_icons = [2];
+let check_icons = [];
 let task_complete_before = [];
 
 //task date array
@@ -163,14 +163,14 @@ const delete_icon = function (trash) {
         console.log("mil gaya");
         let delete_elem = check_icons.findIndex((elem) => elem == index);
         check_icons.splice(delete_elem, 1);
-        if (check_icons.length > 0 && check_icons.length != 1) {
+        if (check_icons.length > 0) {
           check_icons = check_icons.map((elem, index) => {
             return elem > delete_elem ? (elem = elem - 1) : elem;
           });
         }
         console.log(check_icons);
       } else {
-        if (check_icons.length > 0 && check_icons.length != 1) {
+        if (check_icons.length > 0) {
           let newarr = check_icons.sort((a, b) => a - b); // [1,2,5,6]
 
           check_icons = newarr?.map((elem) => {
