@@ -117,8 +117,7 @@ const checked_icon = function (check) {
         task_complete_before.splice(new_index, 1);
         // task_complete_before = [];
       } else {
-        target.classList.remove("task-completed");
-        task_complete_before.push(index);
+        // target.classList.remove("task-completed");
         if (
           target.classList.contains("tomo") ||
           task_complete_before.length > 0
@@ -127,6 +126,7 @@ const checked_icon = function (check) {
           target.classList.add("complete-before");
           target.classList.add("tomo");
           task_status.textContent = "Complete Before ";
+          task_complete_before.push(index);
           check_icons.splice(index, 1);
         } else {
           target.classList.remove("task-completed");
@@ -163,14 +163,14 @@ const delete_icon = function (trash) {
         console.log("mil gaya");
         let delete_elem = check_icons.findIndex((elem) => elem == index);
         check_icons.splice(delete_elem, 1);
-        if (check_icons.length > 0) {
+        if (check_icons.length > 0 && check_icons.length != 1) {
           check_icons = check_icons.map((elem, index) => {
             return elem > delete_elem ? (elem = elem - 1) : elem;
           });
         }
         console.log(check_icons);
       } else {
-        if (check_icons.length > 0) {
+        if (check_icons.length > 0 && check_icons.length != 1) {
           let newarr = check_icons.sort((a, b) => a - b); // [1,2,5,6]
 
           check_icons = newarr?.map((elem) => {
