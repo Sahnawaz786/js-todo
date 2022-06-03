@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sevillana&family=Tangerine:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- add task btn  -->
+    <div class="task hidden">
+      <div class="add-task">
+        <div class="form">
+          <i class="fa fa-close close_add_task"></i>
+
+          <input
+            type="text"
+            placeholder="Title"
+            class="task-title task-common"
+          />
+          <span class="title-task strong_task hidden"
+            >Title Field Required</span
+          >
+          <textarea
+            cols="30"
+            placeholder="Description"
+            class="task-desc task-common"
+            rows="2"
+          ></textarea>
+          <span class="title-desc strong_task hidden"
+            >Description Field Required</span
+          >
+
+          <input
+            type="datetime-local"
+            id="birthdaytime"
+            class="task-time task-common"
+            name="birthdaytime"
+          />
+          <span class="title-time strong_task hidden"
+            >Date and Time Required</span
+          >
+
+          <button class="task-btn">Add Task</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="filter-options hidden">
+      <i class="fa fa-close filter_popup"></i>
+      <button class="filter-btn">All Task</button>
+      <button class="filter-btn">Completed</button>
+      <button class="filter-btn">Pending</button>
+      <button class="filter-btn">Not Completed</button>
+      <!-- <button class="filter-btn"></button> -->
+    </div>
+
+    <div class="all">
+      <nav class="navbar sticky">
+        <div class="img">
+          <img src="img/todo-icon.jpg" class="main-img" alt="todo-icon" />
+          <span class="img-text">Todo App</span>
+        </div>
+        <div class="filter">
+          <input type="text" placeholder="search" class="search-input" />
+          <i class="fa fa-filter filter"></i>
+        </div>
+      </nav>
+
+      <main class="main">
+        <div class="content">
+          <div class="content-data">
+            <p class="c-para">
+              <strong>Pending</strong> Thu, May 12, 2022 9:55 PM
+            </p>
+            <h3 class="c-heading">Summer Sprint</h3>
+            <p class="c-content">
+              netlify is a san francisco-based cloud computing company that
+              offers hosting and serverless backend services for web
+              applications
+            </p>
+            <div class="task-icons">
+              <div class="icons">
+                <i class="fa fa-check icon-img"></i>
+                <i class="fa fa-edit icon-img"></i>
+                <i class="fa fa-trash icon-img"></i>
+              </div>
+            </div>
+          </div>
+          <div class="content-data">
+            <p class="c-para">Pending Thu, May 12, 2022 9:55 PM</p>
+            <h3 class="c-heading">Winter Sprint</h3>
+            <p class="c-content">
+              netlify is a san francisco-based cloud computing company that
+              offers hosting and serverless backend services for web
+              applications
+            </p>
+            <div class="task-icons">
+              <div class="icons">
+                <i class="fa fa-check icon-img"></i>
+                <i class="fa fa-edit icon-img"></i>
+                <i class="fa fa-trash icon-img"></i>
+              </div>
+            </div>
+          </div>
+          <div class="content-data">
+            <p class="c-para">Pending Thu, May 12, 2022 9:55 PM</p>
+            <h3 class="c-heading">Test 1</h3>
+            <p class="c-content">
+              netlify is a san francisco-based cloud computing company that
+              offers hosting and serverless backend services for web
+              applications
+            </p>
+            <div class="task-icons">
+              <div class="icons">
+                <i class="fa fa-check icon-img"></i>
+                <i class="fa fa-edit icon-img"></i>
+                <i class="fa fa-trash icon-img"></i>
+              </div>
+            </div>
+          </div>
+          <div class="content-data">
+            <p class="c-para">Pending Thu, May 12, 2022 9:55 PM</p>
+            <h3 class="c-heading">Test 2</h3>
+            <p class="c-content">
+              netlify is a san francisco-based cloud computing company that
+              offers hosting and serverless backend services for web
+              applications
+            </p>
+            <div class="task-icons">
+              <div class="icons">
+                <i class="fa fa-check icon-img"></i>
+                <i class="fa fa-edit icon-img"></i>
+                <i class="fa fa-trash icon-img"></i>
+              </div>
+            </div>
+          </div>
+          <div class="content-data task-notCompleted">
+            <p class="c-para">Pending Thu, May 12, 2022 9:55 PM</p>
+            <h3 class="c-heading">Test 3</h3>
+            <p class="c-content">
+              netlify is a san francisco-based cloud computing company that
+              offers hosting and serverless backend services for web
+              applications
+            </p>
+            <div class="task-icons">
+              <div class="icons">
+                <i class="fa fa-check icon-img"></i>
+                <i class="fa fa-edit icon-img"></i>
+                <i class="fa fa-trash icon-img"></i>
+              </div>
+            </div>
+          </div>
+          <div class="content-data">
+            <p class="c-para">Pending Thu, May 12, 2022 9:55 PM</p>
+            <h3 class="c-heading">Test 4</h3>
+            <p class="c-content">
+              netlify is a san francisco-based cloud computing company that
+              offers hosting and serverless backend services for web
+              applications
+            </p>
+            <div class="task-icons">
+              <div class="icons">
+                <i class="fa fa-check icon-img"></i>
+                <i class="fa fa-edit icon-img"></i>
+                <i class="fa fa-trash icon-img"></i>
+              </div>
+            </div>
+          </div>
+          <div class="content-data">
+            <p class="c-para">Pending Thu, May 12, 2022 9:55 PM</p>
+            <h3 class="c-heading">Test 5</h3>
+            <p class="c-content">
+              netlify is a san francisco-based cloud computing company that
+              offers hosting and serverless backend services for web
+              applications
+            </p>
+            <div class="task-icons">
+              <div class="icons">
+                <i class="fa fa-check icon-img"></i>
+                <i class="fa fa-edit icon-img"></i>
+                <i class="fa fa-trash icon-img"></i>
+              </div>
+            </div>
+          </div>
+          <div class="content-data task-completed">
+            <p class="c-para">Pending Thu, May 12, 2022 9:55 PM</p>
+            <h3 class="c-heading">Test 6</h3>
+            <p class="c-content">
+              netlify is a san francisco-based cloud computing company that
+              offers hosting and serverless backend services for web
+              applications
+            </p>
+            <div class="task-icons">
+              <div class="icons">
+                <i class="fa fa-check icon-img"></i>
+                <i class="fa fa-edit icon-img"></i>
+                <i class="fa fa-trash icon-img"></i>
+              </div>
+            </div>
+          </div>
+          <div class="content-data">
+            <p class="c-para">Pending Thu, May 12, 2022 9:55 PM</p>
+            <h3 class="c-heading">Test 7</h3>
+            <p class="c-content">
+              netlify is a san francisco-based cloud computing company that
+              offers hosting and serverless backend services for web
+              applications
+            </p>
+            <div class="task-icons">
+              <div class="icons">
+                <i class="fa fa-check icon-img"></i>
+                <i class="fa fa-edit icon-img"></i>
+                <i class="fa fa-trash icon-img"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-data">
+            <p class="c-para">Pending Thu, May 12, 2022 9:55 PM</p>
+            <h3 class="c-heading">Test 8</h3>
+            <p class="c-content">
+              netlify is a san francisco-based cloud computing company that
+              offers hosting and serverless backend services for web
+              applications
+            </p>
+            <div class="task-icons">
+              <div class="icons">
+                <i class="fa fa-check icon-img"></i>
+                <i class="fa fa-edit icon-img"></i>
+                <i class="fa fa-trash icon-img"></i>
+              </div>
+            </div>
+          </div>
+          <div class="content-data">
+            <p class="c-para">Pending Thu, May 12, 2022 9:55 PM</p>
+            <h3 class="c-heading">Test 9</h3>
+            <p class="c-content">
+              netlify is a san francisco-based cloud computing company that
+              offers hosting and serverless backend services for web
+              applications
+            </p>
+            <div class="task-icons">
+              <div class="icons">
+                <i class="fa fa-check icon-img"></i>
+                <i class="fa fa-edit icon-img"></i>
+                <i class="fa fa-trash icon-img"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="btn">Add Task</button>
+      </main>
+    </div>
+  </body>
+  <script src="js/script.js"></script>
+</html>
